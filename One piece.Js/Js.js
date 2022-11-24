@@ -1,4 +1,6 @@
-
+function aleatorio(min, max) {
+    return Math.floor ( Math.random() * (max - min + 1) + min)
+}
 
 
 function iniciarJuego() {
@@ -21,7 +23,22 @@ function seleccionarPirataJugador() {
     } else{ 
         alert("Selecciona un personaje")
     }
+    seleccionarPirataPc()
 }
 
+function seleccionarPirataPc() {
+    let pirataAleatorio = aleatorio(1,3)
+    let spanPirataPc = document.getElementById("pirataPc")
     
-window.addEventListener("load", iniciarJuego)
+    if (pirataAleatorio == 1) {
+        spanPirataPc.innerHTML = "Luffy"
+    }
+    else if (pirataAleatorio == 2) {
+        spanPirataPc.innerHTML = "Shanks"
+    }
+    else if (pirataAleatorio == 3) { 
+        spanPirataPc.innerHTML = "Ace"
+    }
+}
+
+window.addEventListener("load", iniciarJuego) 
