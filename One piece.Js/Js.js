@@ -1,3 +1,9 @@
+let ataqueJugador 
+
+
+
+
+
 function aleatorio(min, max) {
     return Math.floor ( Math.random() * (max - min + 1) + min)
 }
@@ -6,7 +12,14 @@ function aleatorio(min, max) {
 function iniciarJuego() {
     let botonPirata = document.getElementById("boton-pirata")
     botonPirata.addEventListener("click", seleccionarPirataJugador)
-}
+
+        let botonGolpe = document.getElementById("botonGolpe")
+                botonGolpe.addEventListener("click", ataqueGolpe)
+        let botonPatada = document.getElementById("botonPatada")
+                botonPatada.addEventListener("click", ataquePatada)
+        let botonCabezazo = document.getElementById("botonCabezazo")
+                botonCabezazo.addEventListener("click", ataqueCabezazo)    
+}   
 
 function seleccionarPirataJugador() { 
     let spanPirataJugador = document.getElementById("pirataJugador")
@@ -40,5 +53,28 @@ function seleccionarPirataPc() {
         spanPirataPc.innerHTML = "Ace"
     }
 }
+
+function ataqueGolpe() {
+    ataqueJugador = "Golpe"
+}   alert(ataqueJugador)
+
+function ataquePatada() {
+    ataqueJugador = "Patada"
+    alert(ataqueJugador)
+}
+
+function ataqueCabezazo() {
+    ataqueJugador = "Cabezazo"
+    alert(ataqueJugador)
+}
+
+function AtaqueEnemigo() {
+    let ataqueAleatorio = aleatorio(1,3)
+
+    if (ataqueAleatorio == 1) {
+        
+    }
+}
+
 
 window.addEventListener("load", iniciarJuego) 
