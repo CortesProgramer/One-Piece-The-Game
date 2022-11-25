@@ -1,4 +1,6 @@
 let ataqueJugador 
+let AtaqueEnemigo
+let ataqueAleatorio
 
 
 
@@ -56,24 +58,39 @@ function seleccionarPirataPc() {
 
 function ataqueGolpe() {
     ataqueJugador = "Golpe"
-}   alert(ataqueJugador)
+    ataqueAleatorioEnemigo()
+    //alert(ataqueJugador)
+}
 
 function ataquePatada() {
     ataqueJugador = "Patada"
-    alert(ataqueJugador)
+    ataqueAleatorioEnemigo()
+    //alert(ataqueJugador)
 }
 
 function ataqueCabezazo() {
     ataqueJugador = "Cabezazo"
-    alert(ataqueJugador)
+    ataqueAleatorioEnemigo()
+    //alert(ataqueJugador)
 }
 
-function AtaqueEnemigo() {
+function ataqueAleatorioEnemigo() {
     let ataqueAleatorio = aleatorio(1,3)
-
-    if (ataqueAleatorio == 1) {
-        
+        if (ataqueAleatorio == 1) {
+        AtaqueEnemigo = "Golpe"
+    } else if (ataqueAleatorio == 2) {
+        AtaqueEnemigo = "Patada"
+    } else {
+        AtaqueEnemigo = "Cabezazo"
     }
+        mensajes()
+}
+
+function mensajes() {
+    let sectionMensajes = document.getElementById("mensajes")
+    let parrafo = document.createElement("p")
+        parrafo.innerHTML = "Has seleccionado " + ataqueJugador + " Tu enemigo Selecciono " + AtaqueEnemigo
+        sectionMensajes.appendChild(parrafo)
 }
 
 
