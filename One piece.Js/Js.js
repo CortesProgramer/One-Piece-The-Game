@@ -1,7 +1,7 @@
 let ataqueJugador 
-let AtaqueEnemigo
+let ataqueEnemigo
 let ataqueAleatorio
-
+let resultado
 
 
 
@@ -77,19 +77,36 @@ function ataqueCabezazo() {
 function ataqueAleatorioEnemigo() {
     let ataqueAleatorio = aleatorio(1,3)
         if (ataqueAleatorio == 1) {
-        AtaqueEnemigo = "Golpe"
+        ataqueEnemigo = "Golpe"
     } else if (ataqueAleatorio == 2) {
-        AtaqueEnemigo = "Patada"
+        ataqueEnemigo = "Patada"
     } else {
-        AtaqueEnemigo = "Cabezazo"
+        ataqueEnemigo = "Cabezazo"
     }
-        mensajes()
+
+    pelea()
 }
+
+function pelea() {
+if(ataqueJugador == ataqueEnemigo) {
+    resultado = "EMPATE ⚔"
+} else if(ataqueJugador == "Golpe" && ataqueEnemigo == "Cabezazo") {
+    resultado = "GANASTE ✔"
+} else if(ataqueJugador == "Patada" && ataqueEnemigo == "Golpe") {
+    resultado = "GANASTE ✔"
+} else if(ataqueJugador == "Cabezazo" && ataqueEnemigo == "Patada") {
+    resultado = "GANASTE ✔"
+} else {
+    resultado = "PERDISTE ❌"
+}
+    mensajes( )
+}
+
 
 function mensajes() {
     let sectionMensajes = document.getElementById("mensajes")
     let parrafo = document.createElement("p")
-        parrafo.innerHTML = "Has seleccionado " + ataqueJugador + " Tu enemigo Selecciono " + AtaqueEnemigo
+        parrafo.innerHTML = "Has seleccionado " + ataqueJugador + " Tu enemigo Selecciono " + ataqueEnemigo + " " + resultado
         sectionMensajes.appendChild(parrafo)
 }
 
