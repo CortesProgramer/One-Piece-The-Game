@@ -2,8 +2,8 @@ let ataqueJugador
 let ataqueEnemigo
 let ataqueAleatorio
 let resultado
-
-
+let vidasJugador = 3    
+let vidasPc = 3
 
 
 function aleatorio(min, max) {
@@ -38,6 +38,9 @@ function seleccionarPirataJugador() {
     } else{ 
         alert("Selecciona un personaje")
     }
+
+        let botonPirata = document.getElementById("boton-pirata")
+        botonPirata.disabled = true
     seleccionarPirataPc()
 }
 
@@ -88,27 +91,62 @@ function ataqueAleatorioEnemigo() {
 }
 
 function pelea() {
-if(ataqueJugador == ataqueEnemigo) {
-    resultado = "EMPATE ⚔"
+    let spanVidasJugador = document.getElementById("vidasJugador")
+    let spanVidasPc = document.getElementById("vidasPc")
+
+
+    if(ataqueJugador == ataqueEnemigo) {
+        mensajes("EMPATE ⚔")
 } else if(ataqueJugador == "Golpe" && ataqueEnemigo == "Cabezazo") {
-    resultado = "GANASTE ✔"
+    mensajes("GANASTE ✔")
+        vidasPc--   
+        spanVidasPc.innerHTML = vidasPc
 } else if(ataqueJugador == "Patada" && ataqueEnemigo == "Golpe") {
-    resultado = "GANASTE ✔"
+    mensajes("GANASTE ✔")
+        vidasPc--   
+        spanVidasPc.innerHTML = vidasPc
 } else if(ataqueJugador == "Cabezazo" && ataqueEnemigo == "Patada") {
-    resultado = "GANASTE ✔"
+    mensajes("GANASTE ✔")
+        vidasPc--   
+        spanVidasPc.innerHTML = vidasPc
 } else {
-    resultado = "PERDISTE ❌"
+    mensajes("PERDISTE ❌")
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador
+} 
+    revision()
 }
-    mensajes( )
+
+function revision() {
+    if (vidasJugador == 0) {
+        mensajesFinales("GANASTE, FELICIDADES 🌹")
+}   else if (vidasPc == 0) {
+        mensajesFinales("PERDISTE, LO SIENTO 🐱‍👤")
+}  
+      
 }
 
 
-function mensajes() {
+function mensajes(resultado) {
     let sectionMensajes = document.getElementById("mensajes")
     let parrafo = document.createElement("p")
         parrafo.innerHTML = "Has seleccionado " + ataqueJugador + " Tu enemigo Selecciono " + ataqueEnemigo + " " + resultado
         sectionMensajes.appendChild(parrafo)
 }
 
+function mensajesFinales(resultadoFinal) {
+    let sectionMensajes = document.getElementById("mensajes")
+    let parrafo = document.createElement("p")
+        parrafo.innerHTML = resultadoFinal
+        sectionMensajes.appendChild(parrafo)
+}
+
+function disabled() {
+    if (vidasJugador == 0) {
+    let botonGolpe = document.getElementById("botonGolpe")
+    botonGolpe.disabled = true
+    }
+
+}
 
 window.addEventListener("load", iniciarJuego) 
