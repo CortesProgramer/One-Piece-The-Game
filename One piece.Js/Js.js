@@ -12,6 +12,12 @@ function aleatorio(min, max) {
 
 
 function iniciarJuego() {
+   let sectionAtaques = document.getElementById("seleccion")
+   sectionAtaques.style.display = "none"
+
+   let sectionReiniciar =document.getElementById("reinicio")
+   sectionReiniciar.style.display = "none"
+   
     let botonPirata = document.getElementById("boton-pirata")
     botonPirata.addEventListener("click", seleccionarPirataJugador)
 
@@ -21,9 +27,17 @@ function iniciarJuego() {
                 botonPatada.addEventListener("click", ataquePatada)
         let botonCabezazo = document.getElementById("botonCabezazo")
                 botonCabezazo.addEventListener("click", ataqueCabezazo)    
+        let botonReiniciar = document.getElementById("reinicio")
+                botonReiniciar.addEventListener("click", reiniciando)        
 }   
 
 function seleccionarPirataJugador() { 
+    let idPirata = document.getElementById("id-pirata")
+    idPirata.style.display = "none"
+
+    let sectionAtaques = document.getElementById("seleccion")
+    sectionAtaques.style.display = "block"
+    
     let spanPirataJugador = document.getElementById("pirataJugador")
      
     if (document.getElementById("Monkey D. Luffy").checked) {
@@ -101,17 +115,25 @@ function pelea() {
     mensajes("GANASTE ✔")
         vidasPc--   
         spanVidasPc.innerHTML = vidasPc
-} else if(ataqueJugador == "Patada" && ataqueEnemigo == "Golpe") {
+} else if(ataqueJugador == "Cabezazo" && ataqueEnemigo == "Golpe") {
+    mensajes("PERDISTE ❌")
+        vidasJugador--   
+        spanVidasJugador.innerHTML = vidasJugador
+}  else if(ataqueJugador == "Patada" && ataqueEnemigo == "Golpe") {
     mensajes("GANASTE ✔")
         vidasPc--   
         spanVidasPc.innerHTML = vidasPc
+}  else if(ataqueJugador == "Golpe" && ataqueEnemigo == "Patada") {
+        mensajes("PERDISTE ❌")
+            vidas--   
+            spanVidasPc.innerHTML = vidasJugador
 } else if(ataqueJugador == "Cabezazo" && ataqueEnemigo == "Patada") {
     mensajes("GANASTE ✔")
         vidasPc--   
         spanVidasPc.innerHTML = vidasPc
-} else {
+} else if(ataqueJugador == "Patada" && ataqueEnemigo == "Cabezazo") {
     mensajes("PERDISTE ❌")
-        vidasJugador--
+        vidasJugador--   
         spanVidasJugador.innerHTML = vidasJugador
 } 
     revision()
@@ -119,9 +141,9 @@ function pelea() {
 
 function revision() {
     if (vidasJugador == 0) {
-        mensajesFinales("GANASTE, FELICIDADES 🌹")
-}   else if (vidasPc == 0) {
         mensajesFinales("PERDISTE, LO SIENTO 🐱‍👤")
+}   else if (vidasPc == 0) {
+        mensajesFinales("GANASTE, FELICIDADES 🌹")
 }  
       
 }
@@ -139,14 +161,20 @@ function mensajesFinales(resultadoFinal) {
     let parrafo = document.createElement("p")
         parrafo.innerHTML = resultadoFinal
         sectionMensajes.appendChild(parrafo)
+
+        let botonGolpe = document.getElementById("botonGolpe")
+        botonGolpe.disabled = true  
+        let botonPatada = document.getElementById("botonPatada")
+        botonPatada.disabled = true
+        let botonCabezazo = document.getElementById("botonCabezazo")
+        botonCabezazo.disabled = true
+
+    let sectionReiniciar =document.getElementById("reinicio")
+    sectionReiniciar.style.display = "block"    
 }
 
-function disabled() {
-    if (vidasJugador == 0) {
-    let botonGolpe = document.getElementById("botonGolpe")
-    botonGolpe.disabled = true
-    }
-
+function reiniciando() {
+    window.location.reload()
 }
 
 window.addEventListener("load", iniciarJuego) 
