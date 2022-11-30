@@ -28,7 +28,7 @@ function iniciarJuego() {
         let botonCabezazo = document.getElementById("botonCabezazo")
                 botonCabezazo.addEventListener("click", ataqueCabezazo)    
         let botonReiniciar = document.getElementById("reinicio")
-                botonReiniciar.addEventListener("click", reiniciando)        
+                botonReiniciar.addEventListener("click", reiniciando)    
 }   
 
 function seleccionarPirataJugador() { 

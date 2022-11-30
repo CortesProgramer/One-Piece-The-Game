@@ -1,0 +1,11 @@
+.h2 {
+    display: inline;
+    color: salmon;
+    width: 120;
+    height: 90;
+}
+
+#id-pirata {
+    display: flexbox;
+
+}
