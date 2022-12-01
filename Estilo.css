@@ -29,7 +29,7 @@ p {
 
 #monkey {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 28px;
+    font-size: 25px;
     display: flex;   
     flex-direction: column;
     justify-content: center;
@@ -37,14 +37,15 @@ p {
     font-weight: 700;
 }
 
-#d {
+#d:hover {
     background-color: rgba(255, 187, 0, 0.582);
+    cursor: pointer;
 }
 
 #akagami {
     
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 28px;
+    font-size: 25px;
     display: flex;   
     flex-direction: column;
     justify-content: center;
@@ -52,14 +53,15 @@ p {
     font-weight: 700;
 }
 
-#no {
+#no:hover {
     background-color: rgba(184, 0, 0, 0.651);
+    cursor: pointer;   
 }
 
 #ace {
     
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 28px;
+    font-size: 25px;
     display: flex;   
     flex-direction: column;
     justify-content: center;
@@ -67,6 +69,8 @@ p {
     font-weight: 700;
 }
 
-#aceL {
+#aceL:hover {
     background-color: rgba(255, 72, 0, 0.616);
+    cursor: pointer;
 }
+
