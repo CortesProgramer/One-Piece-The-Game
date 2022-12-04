@@ -1,9 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: rgba(255, 255, 255, 0.363);
+
+}
+
 h2 {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: xx-large;
+    font-size: x-large;
     font-weight: 700;
     display: inline;
     color: rgb(238, 24, 0);
+    padding: 40px;
 }
 
 #id-pirata {
@@ -20,7 +28,7 @@ h2 {
 }
 
 p {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     display: flex;   
     flex-direction: row;
     justify-content: center;
@@ -28,8 +36,8 @@ p {
 }
 
 #monkey {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
     display: flex;   
     flex-direction: column;
     justify-content: center;
@@ -40,12 +48,13 @@ p {
 #d:hover {
     background-color: rgba(255, 187, 0, 0.582);
     cursor: pointer;
+
 }
 
 #akagami {
     
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
     display: flex;   
     flex-direction: column;
     justify-content: center;
@@ -54,14 +63,14 @@ p {
 }
 
 #no:hover {
-    background-color: rgba(184, 0, 0, 0.651);
+    background-color: rgba(184, 0, 0, 0.575);
     cursor: pointer;   
 }
 
 #ace {
     
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
     display: flex;   
     flex-direction: column;
     justify-content: center;
@@ -72,5 +81,34 @@ p {
 #aceL:hover {
     background-color: rgba(255, 72, 0, 0.616);
     cursor: pointer;
+}
+
+.inputP {
+    cursor: pointer;
+    height: 40px;
+
+}
+
+.tarjetasP {
+    display: flex;
+    gap: 35px;
+}
+
+button {
+    height: 40px;
+    width: 110px;
+    cursor: pointer;
+}
+
+button:hover {
+    height: 40px;
+    width: 110px;
+    cursor: pointer;
+    background-color: rgba(0, 95, 173, 0.185);
+}
+
+#imgP {
+    border: solid 3px black;
+    border-radius: 3%;
 }
 
