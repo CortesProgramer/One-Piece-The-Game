@@ -12,6 +12,7 @@ h2 {
     display: inline;
     color: rgb(238, 24, 0);
     padding: 40px;
+    
 }
 
 #id-pirata {
@@ -94,10 +95,35 @@ p {
     gap: 35px;
 }
 
+#imgP {
+    border: solid 3px black;
+    border-radius: 3%;
+}
+
+#pirataJugador {
+    padding: 12px;
+    color: blue;
+}
+
+#pirataPc {
+    padding: 12px;
+    color: red;
+}
+
+.segundaPag {
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+    
+}
+
 button {
+    display: inline-block;
     height: 40px;
     width: 110px;
     cursor: pointer;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
 button:hover {
@@ -107,8 +133,10 @@ button:hover {
     background-color: rgba(0, 95, 173, 0.185);
 }
 
-#imgP {
-    border: solid 3px black;
-    border-radius: 3%;
+#contenedor {
+    text-align: center;
 }
 
+#mensajes {
+    margin: 70px;
+}
