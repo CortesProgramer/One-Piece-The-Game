@@ -125,8 +125,8 @@ function pelea() {
         spanVidasPc.innerHTML = vidasPc
 }  else if(ataqueJugador == "Golpe" && ataqueEnemigo == "Patada") {
         mensajes("PERDISTE ❌")
-            vidas--   
-            spanVidasPc.innerHTML = vidasJugador
+            vidasJugador--   
+            spanVidasJugador.innerHTML = vidasJugador
 } else if(ataqueJugador == "Cabezazo" && ataqueEnemigo == "Patada") {
     mensajes("GANASTE ✔")
         vidasPc--   

@@ -2,8 +2,6 @@
 
 body {
     font-family: 'Press Start 2P', cursive;
-    background-color: rgba(255, 255, 255, 0.363);
-
 }
 
 h2 {
@@ -26,6 +24,8 @@ h2 {
 #onepiece {
     height: 142px;
     width: 330px;
+    display: flex;
+    justify-content: center;
 }
 
 p {
@@ -34,6 +34,7 @@ p {
     flex-direction: row;
     justify-content: center;
     align-items: center; 
+    font-size: 18px;
 }
 
 #monkey {
@@ -124,6 +125,8 @@ button {
     cursor: pointer;
     margin-right: 50px;
     margin-left: 50px;
+    border-radius: 25px;
+    border: 2px, solid, black;
 }
 
 button:hover {
@@ -139,4 +142,15 @@ button:hover {
 
 #mensajes {
     margin: 70px;
+}
+
+#contenedorImg {
+    text-align: center;
+}
+
+#onepieceP {
+    height: 142px;
+    width: 330px;
+    margin-bottom: 30px;
+    
 }
