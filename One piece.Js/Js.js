@@ -51,6 +51,7 @@ function seleccionarPirataJugador() {
         alert("Seleccionaste a Hiken No Ace")
     } else{ 
         alert("Selecciona un personaje")
+        location.reload()
     }
 
         let botonPirata = document.getElementById("boton-pirata")
